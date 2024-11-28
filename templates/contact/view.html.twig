@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Contact !{% endblock %}
+
+{% block body %}
+
+    <div id="wrapper">
+        {{ include('components/sidebar.html.twig') }}
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                 {{ include('components/top-header.html.twig') }}
+               <div id="content-wrapper" class="d-flex flex-column">
+                    <div id="content">
+                        <div class="container-fluid">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <div class="row">
+                                        <h6 class="m-0 font-weight-bold text-primary"> Contact  </h6>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="p-5">
+                                        <div class="form-group row">
+                                            <strong class="col-sm-3 ">First Name</strong>
+                                            <div class="col-sm-7">
+                                                <label class=" font-weigth-600">{{contact.getFirstName()}}</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <strong class="col-sm-3">Last Name</strong>
+                                            <div class="col-sm-7">
+                                                <label class=" font-weigth-600">{{contact.getLastName()}}</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <strong class="col-sm-3">Mobile</strong>
+                                            <div class="col-sm-7">
+                                                <label class=" font-weigth-600">{{contact.getMobile()}}</label>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group row">
+                                            <strong class="col-sm-3">Email</strong>
+                                            <div class="col-sm-7">
+                                                <label class=" font-weigth-600">{{contact.getEmail()}}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ include('components/footer.html.twig') }}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} DashboardController!{% endblock %}
+
+{% block body %}
+
+<div id="wrapper">
+        {{ include('components/sidebar.html.twig') }}
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+                 {{ include('components/top-header.html.twig') }}
+               <div id="content-wrapper" class="d-flex flex-column">
+                    <div id="content">
+                        <div class="container-fluid">
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <div class="row">
+                                        <h6 class="m-0 font-weight-bold text-primary">Contact List </h6>
+                                         <a href="{{ path('app_contact_add')}}" style="left:auto;right:0;position:absolute; margin-right:20px; margin-top:-8px;" class=" btn btn-primary">Create </a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                      
+                                        {% include 'components/contact-table.html.twig' with {'contacts': contacts} %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ include('components/footer.html.twig') }}
+        </div>
+    </div>
+
+{% endblock %}
